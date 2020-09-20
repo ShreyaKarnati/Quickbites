@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Quickbites</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link href="bootstrap-responsive.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+	<link href="default.css" rel="stylesheet">
+	<link rel="shortcut icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Extended" rel="stylesheet">
+<head/>
+
+<body>
+ <!-- navbar -->
+	<div class="navbar-wrapper">
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<!-- Responsive navbar -->
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</a>
+					<h1 class="brand"><a href="index.html">Quickbites</a></h1>
+					<!-- navigation -->
+					<nav class="pull-right nav-collapse collapse">
+						<ul id="menu-main" class="nav">
+							<li><a href="index.html">Home</a></li>
+					    <li><a href="directory.html">Directory</a></li>
+							<li><a href="maps.html">Find</a></li>
+							<li><a href="blog.html">Blog</a></li>
+							<li><a href="add.html">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<section id="contact" class="section green">
+		<div class="container">
+			<h4>Become a Part of Our Community</h4>
+			<p>
+				If you are the owner of a small business or restaurant and would like you business to be added to our catelog please reach out to us. Our mission is to help as many small businesses as we can during these difficult times. If you have any questions or feedback we would also love to here from you.
+			</p>
+			<div class="blankdivider30">
+			</div>
+			
+      <div class="row">
+				<div class="span12">
+					<div class="cform" id="contact-form">
+					
+							<div class="row">
+								<div class="span6">
+									<div class="field your-name form-group">
+                     <form method="post" autocomplete="off" name="google-sheet">
+										<input type="text" name="businessname" class="form-control" placeholder="Business Name" value="" required=""/>
+									</div>
+									<div class="field your-email form-group">
+									<input type="text" name="Name" class="form-control" placeholder="Your Name " value="" required=""/>	
+									</div><br>
+									<div class="field subject form-group">
+										<input type="text" name="contactinfo" class="form-control" placeholder="Contact Info " value="" required=""/>
+									</div>
+								</div>
+								<div class="span6">
+									<div class="field message form-group">
+										<textarea class="form-control" name="message" rows="5" placeholder="Additional comments or concerns."></textarea>
+										<div class="validation"></div>
+									</div><br>
+									<input type="submit" value="Submit Request " class="btn btn-theme pull-left">
+                  </form>
+								
+					</div>
+				</div>
+
+				<!-- ./span12 -->
+			</div>
+		</div>
+  </section>
+
+  <footer>
+		<div class="container">
+			<div class="row">
+				<div class="span6 offset3">
+					<ul class="social-networks">
+						<li><a href="#"><i class="icon-circled icon-bgdark icon-instagram icon-2x"></i></a></li>
+						<li><a href="#"><i class="icon-circled icon-bgdark icon-twitter icon-2x"></i></a></li>
+						<li><a href="#"><i class="icon-circled icon-bgdark icon-dribbble icon-2x"></i></a></li>
+						<li><a href="#"><i class="icon-circled icon-bgdark icon-pinterest icon-2x"></i></a></li>
+					</ul>
+					<p class="copyright">
+						&copy; Maxim Theme. All rights reserved.
+						<div class="credits">
+							<!--
+                All the links in the footer should remain intact.
+                You can delete the links only if you purchased the pro version.
+                Licensing information: https://bootstrapmade.com/license/
+                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Maxim
+              -->
+							Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+						</div>
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- ./container -->
+	</footer>
+
+<script>
+            const scriptURL = "https://script.google.com/macros/s/AKfycbx00XxFGDqW5PtWM0-9mIwxiPuhOx1LFImbmfP2AqSHX_Qsa0Fi/exec"
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us! We Will Contact You Soon."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
