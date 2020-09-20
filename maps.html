@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Quickbites</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link href="bootstrap-responsive.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+	<link href="default.css" rel="stylesheet">
+  <link href="map.css" rel="stylesheet">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- =======================================================
+    Theme Name: Maxim
+    Theme URL: https://bootstrapmade.com/maxim-free-onepage-bootstrap-theme/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+	======================================================= 
+
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+
+  
+  <title> test</title>-->
+  <style>
+      *{
+        margin: 0;
+        padding:0;
+        box-sizing:border-box;
+
+      }
+
+      #map {
+        width: 100%;
+        height: 820px;
+        aglin: center;
+        text-align: center;
+        background-color: grey;
+      }
+
+      /*#back{
+        color:#fff;
+        background: linear-gradient(-45deg, blue , yellow, red, green);
+        background-size: 400% 400%;
+        position: relative;
+      }*/
+
+  </style>
+
+</head>
+
+<body>
+	<!-- navbar -->
+	<div class="navbar-wrapper">
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<!-- Responsive navbar -->
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</a>
+					<h1 class="brand"><a href="index.html">Quickbites</a></h1>
+					<!-- navigation -->
+					<nav class="pull-right nav-collapse collapse">
+						<ul id="menu-main" class="nav">
+							<li><a href="index.html">Home</a></li>
+					    <li><a href="directory.html">Directory</a></li>
+							<li><a href="maps.html">Find</a></li>
+							<li><a href="blog.html">Blog</a></li>
+							<li><a href="add.html">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+  <section id='back'>
+  
+  <!--<h4> <strong>Small Businesses Near You !</strong> </h4>-->
+
+  <!--Create Map-->
+  <div id="map"> </div>
+  
+  <script>
+    
+    function initMap() {
+      
+      var map = new google.maps.Map(document.getElementById('map'), {center:{lat:47.6172, lng:-122.1536}, zoom:12.5
+      });
+
+      addMarker({coords:{lat:47.619548, lng:-122.131121}, content:'<a href = "https://www.thefrenchbakery.com/" target="_blank"> The French Bakery </a>'})
+      addMarker({coords:{lat:47.632066, lng:-122.136395},content:'<a href = "https://teapotvegetarianhouse.com/" target="_blank"> Teapot Vegetarian House </a>'})
+      addMarker({coords:{lat:47.667268, lng:-122.106128}, content:'<a href = "https://www.blazingbagels.com/" target="_blank"> Blazing Bagels </a>'})
+      addMarker({coords:{lat:47.617380, lng:-122.127292},content:'<a href = "https://palacebbq.com/" target="_blank"> Palace Korean Bar & Grill </a>'})
+      addMarker({coords:{lat:47.581438, lng:-122.139006}, content:"<a href = 'https://liljonrestaurant.com/about.html' target='_blank'> Lil' John Restaurant & Lounge </a>"})
+      addMarker({coords:{lat:47.612403, lng:-122.196497}, content:'<a href = "https://seastarrestaurant.com/" target="_blank"> Seastar Restaurant & Raw Bar </a>'})
+      addMarker({coords:{lat: 47.620829, lng:-122.130049}, content:'<a href = "https://firenzerestaurantbellevue.com/" target="_blank"> Firenze </a>'})
+      addMarker({coords:{lat: 47.617570, lng:-122.127876}, content:'<a href = "https://www.doughzonedumplinghouse.com/" target="_blank"> Dough Zone Dumpling House </a>'})
+      addMarker({coords:{lat:47.620349, lng:-122.180540},content:'<a href = "https://www.thecrabpotseattle.com/" target="_blank"> The Crab Pot Bellevue </a>'})
+      addMarker({coords:{lat:47.628150, lng:-122.135946}, content:'<a href = "https://www.pagliacci.com/" target="_blank"> Pagliacci Pizza </a>'})
+
+      
+      function addMarker(props) {
+        var marker = new google.maps.Marker({position:props.coords, map:map})
+
+        if(props.content) {
+          var infoWindow = new google.maps.InfoWindow({
+            content:props.content
+          })
+
+          marker.addListener('click', function() {
+            infoWindow.open(map, marker)
+          })
+        }
+      }
+      
+
+    }
+  </script>
+
+  <script defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZj6vf3W8S3wJdneGcKeFHodWM1dCEGsc&callback=initMap"
+
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZj6vf3W8S3wJdneGcKeFHodWM1dCEGsc&libraries=places">
+
+   
+
+    
+  </script>
+
+</section>
+</body>
+
+</html>
